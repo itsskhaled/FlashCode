@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000;
+    --foreground: #ededed;
+  }
+}
+
+::selection {
+  background: #34c404;
+  color: #000;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#smooth-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+#smooth-content {
+  will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .absoluteIsDesktop {
+    position: absolute;
+  }
+}
+@media (max-width: 768px) {
+  .hiddenPhotos {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) and (orientation: landscape) {
+  .heightHomeLandscape {
+    height: 300vh;
+  }
+  .heightInfoHomeLandscape {
+    height: 200vh;
+  }
+  .heightCardValuesLandscape {
+    height: 600vh;
+  }
+  .heightHowItWorkLandscape {
+    height: 200vh;
+  }
+  .heightSafetyLandscape {
+    height: 150vh;
+  }
+  .heightSafetyCardsLandscape {
+    height: 250vh;
+  }
+  .heightFooterLandscape {
+    height: 60vh;
+  }
+  .textLandscape {
+    font-size: 35px;
+  }
+}
+
+.word1 {
+  background: #34c404;
+  color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  transform: rotate(-10deg);
+}
+
+.wordsecond1,
+.wordsecond2 {
+  background: #ff3600;
+  color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  transform: rotate(-10deg);
+}
