@@ -154,6 +154,84 @@ export default function HowItWorkJSX() {
                     ease: "power3.out",
                     duration: 0.8,
                 }, "<")
+            } else if (isMobile) {
+                const titleEnjoySplit = new SplitText(titleEnjoyRef.current, {
+                    type: "words",
+                    mask: "words"
+                })
+                const subtitleEnjoySplit = new SplitText(subtitleEnjoyRef.current, {
+                    type: "lines",
+                    mask: "lines"
+                })
+                const titleMomentsSplit = new SplitText(titleMomentsRef.current, {
+                    type: "words",
+                    mask: "words"
+                })
+                const subtitleMomentsSplit = new SplitText(subtitleMomentsRef.current, {
+                    type: "lines",
+                    mask: "lines"
+                })
+                const titleConneectSplit = new SplitText(titleConneectRef.current, {
+                    type: "words",
+                    mask: "words"
+                })
+                const subtitleConneectSplit = new SplitText(subtitleConneectRef.current, {
+                    type: "lines",
+                    mask: "lines"
+                })
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top center",
+                        end: "+=50%",
+                        toggleActions: "play none none none",
+                    }
+                })
+                tl.from(titleEnjoySplit.words, {
+                    y: 50,
+                    opacity: 0,
+                    filter: "blur(10px)",
+                    duration: 0.8,
+                    stagger: { each: 0.05 },
+                    ease: "power2.out"
+                })
+                tl.from(subtitleEnjoySplit.lines, {
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: { each: 0.05 },
+                    ease: "power2.out"
+                }, "<20%")
+                tl.from(titleMomentsSplit.words, {
+                    y: 50,
+                    opacity: 0,
+                    filter: "blur(10px)",
+                    duration: 0.8,
+                    stagger: { each: 0.05 },
+                    ease: "power2.out"
+                }, "<")
+                tl.from(subtitleMomentsSplit.lines, {
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: { each: 0.05 },
+                    ease: "power2.out"
+                }, "<20%")
+                tl.from(titleConneectSplit.words, {
+                    y: 50,
+                    opacity: 0,
+                    filter: "blur(10px)",
+                    duration: 0.8,
+                    stagger: { each: 0.05 },
+                    ease: "power2.out"
+                }, "<")
+                tl.from(subtitleConneectSplit.lines, {
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: { each: 0.05 },
+                    ease: "power2.out"
+                })
             }
         })
     });

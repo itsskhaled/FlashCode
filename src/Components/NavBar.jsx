@@ -48,7 +48,6 @@ export default function NabBar() {
         });
     }, []);
 
-    // ✅ فتح/إغلاق المينيو
     const toggleMenu = () => {
         if (!isOpen) {
             gsap.to(mobileMenuRef.current, {
